@@ -28,7 +28,6 @@ public class DeckManager2 : UdonSharpBehaviour
 
     void Start()
     {
-
         pools = normalPools;
         cardsRemaining = new int[deckCount];
         REMAINING_CARD_VALUE = 52;
@@ -296,7 +295,7 @@ public class DeckManager2 : UdonSharpBehaviour
                 Networking.SetOwner(Networking.LocalPlayer, pools[i].gameObject);
                 foreach(GameObject card in pools[i].Pool)
                 {
-                    //Networking.SetOwner(Networking.LocalPlayer, card);
+                    Networking.SetOwner(Networking.LocalPlayer, card);
                     PlayingCard curCard = card.GetComponent<PlayingCard>();
                     curCard.drawn = false;
                     //curCard.RequestSerialization();
@@ -374,7 +373,7 @@ public class DeckManager2 : UdonSharpBehaviour
                 Networking.SetOwner(Networking.LocalPlayer, pools[i].gameObject);
                 foreach(GameObject card in pools[i].Pool)
                 {
-                    //Networking.SetOwner(Networking.LocalPlayer, card);
+                    Networking.SetOwner(Networking.LocalPlayer, card);
                     PlayingCard curCard = card.GetComponent<PlayingCard>();
                     curCard.drawn = false;
                     //curCard.RequestSerialization();
